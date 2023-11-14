@@ -78,12 +78,15 @@ setInterval(() =>  {
     this.time = (new Date() - this.startTime) / 1000;
     this.data.push([this.time, newValue]);
     console.log(this.data[this.data.length - 1]);
+    
+
+  }
+  }, 50);
+setInterval(() => {
     this.chart.series[0].setData(this.data, false);
     const xAxis = this.chart.xAxis[0];
     xAxis.setExtremes(0, this.time);
-  }
-  }, 50);
-
+    }, 200)
   },
 
 };
